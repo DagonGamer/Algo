@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ALGO</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <p>T</p><p>E</p><p>R</p><p>E</p>
+
+    <script>
+
+        let letras = Array.from(document.querySelectorAll("p"));
+
+        let Animar = () => {
+            letras[0].style = "animation: Rotate 2s -4s cubic-bezier(.45,.05,.55,.95) infinite alternate;";
+            letras[1].style = "animation: Rotate 2s -3.333s cubic-bezier(.45,.05,.55,.95) infinite alternate;";
+            letras[2].style = "animation: Rotate 2s -2.666s cubic-bezier(.45,.05,.55,.95) infinite alternate;";
+            letras[3].style = "animation: Rotate 2s -2s cubic-bezier(.45,.05,.55,.95) infinite alternate;";
+        }
+
+        Animar();
+
+        document.querySelector("body").onclick = () => {
+            letras.forEach((el, idx) => el.style.animation = "FullRotate" + idx + " 1s cubic-bezier(.22,.61,.36,1) infinite");
+            setTimeout(Animar, 1000);
+        }
+
+    </script>
+    
+</body>
+</html>
